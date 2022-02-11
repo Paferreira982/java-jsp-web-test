@@ -16,10 +16,11 @@ public class User extends Payload {
 	
 	private List<String> roles;
 	
+	public User() {
+	}
 	public User(Integer status, String message) {
 		super(status, message);
 	}
-	
 	public User(Long id, String username, String password, String accessToken, String tokenType, Boolean active,
 			List<String> roles) {
 		super();

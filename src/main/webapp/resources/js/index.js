@@ -9,7 +9,8 @@ $(".btn-login-entry").click(() => {
         },
         success: (result) => {
             console.log(result);
-            window.location.href="home.jsp";
+            if (result.status == 200)
+                window.location.href="home.jsp";
         },
         error: (result) => {
             sessionStorage.clear();
