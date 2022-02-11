@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.btn-login-entry {
+    width: 100%;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 2%;
+    box-shadow: 4px 7px 7px 3px rgba(17, 17, 17, 0.596);
+    background-color: white;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }

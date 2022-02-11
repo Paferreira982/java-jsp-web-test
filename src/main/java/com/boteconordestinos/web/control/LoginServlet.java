@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.boteconordestinos.web.model.User;
 import com.boteconordestinos.web.payload.LoginPayload;
-import com.boteconordestinos.web.payload.UserPayload;
 import com.boteconordestinos.web.service.UserService;
 import com.google.gson.Gson;
 
@@ -33,14 +32,15 @@ public class LoginServlet extends HttpServlet {
 		LoginPayload loginPayload = new LoginPayload(username, password);
         
         String requestJson = gson.toJson(loginPayload);
-        UserPayload userPayload = service.singIn(requestJson);
+        User user = service.singIn(requestJson);
         
         String responseJson;
-        if (userPayload.getAccessToken() != null) {
-        	responseJson = gson.toJson(new User(userPayload));
-        	request.getSession().setAttribute("accessToken", userPayload.getAccessToken());
+        
+        if (user.getAccessToken() != null) {
+        	responseJson = gson.toJson(user);
+        	request.getSession().setAttribute("loggedUser", user);
         } else {
-        	responseJson = gson.toJson(userPayload);
+        	responseJson = gson.toJson(user);
         }
         
 		response.setContentType("application/json");

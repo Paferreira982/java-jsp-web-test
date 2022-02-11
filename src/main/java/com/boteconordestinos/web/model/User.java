@@ -2,26 +2,34 @@ package com.boteconordestinos.web.model;
 
 import java.util.List;
 
-import com.boteconordestinos.web.payload.UserPayload;
+import com.boteconordestinos.web.payload.Payload;
 
-public class User {
+public class User extends Payload {
 	private Long id;
 	
 	private String username;
 	private String password;
+	private String accessToken;
+	private String tokenType;
 	
 	private Boolean active;
 	
 	private List<String> roles;
 	
-	public User() {
+	public User(Integer status, String message) {
+		super(status, message);
 	}
-	public User(UserPayload userPayload) {
-		this.id = userPayload.getId();
-		this.username = userPayload.getUsername();
-		this.password = userPayload.getPassword();
-		this.active = userPayload.getActive();
-		this.roles = userPayload.getRoles();
+	
+	public User(Long id, String username, String password, String accessToken, String tokenType, Boolean active,
+			List<String> roles) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.accessToken = accessToken;
+		this.tokenType = tokenType;
+		this.active = active;
+		this.roles = roles;
 	}
 	public Long getId() {
 		return id;
@@ -52,5 +60,17 @@ public class User {
 	}
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
+	}
+	public String getAccessToken() {
+		return accessToken;
+	}
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+	}
+	public String getTokenType() {
+		return tokenType;
+	}
+	public void setTokenType(String tokenType) {
+		this.tokenType = tokenType;
 	}
 }

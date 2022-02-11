@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="utf-8">
 <title>Boteco Nordestino's | Login</title>
@@ -10,37 +10,24 @@
 </head>
 <body>
 		
-    <div class="container">
-        <button id="btn1">Logar com admin</button>
+    <div class="vertical-center">
+        <div class="container p-5 pt-4">
+            <div class="row mb-3">
+                <label for="username" class="form-label">Nome de usuário</label>
+                <input type="email" class="form-control" id="username">
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <div class="row mt-4">
+                <button type="button" class="btn btn-outline-primary">Logar</button>
+            </div>
+        </div>
     </div>
 
     <!-- IMPORTED JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-
-        $("#btn1").click(() => {
-            console.log("Tentei")
-            $.ajax({
-                url: "LoginServlet",
-                method: "POST",
-                async: true,
-                data: {
-                    username: "admin",
-                    password: "admin123"
-                },
-                success: (result) => {
-                    console.log(result);
-                    sessionStorage.setItem("loggedUser", JSON.stringify(result));
-                    window.location.href="home.jsp";
-                },
-                error: (result) => {
-                	sessionStorage.clear();
-                    console.log("Error")
-                    console.log(result)
-                }
-            });
-        })
-    </script>
+    <script src="./resources/js/index.js"></script>
 </body>
 </html>
