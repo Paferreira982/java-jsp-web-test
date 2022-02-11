@@ -21,7 +21,9 @@ public class UserService extends BaseHttp {
 			if (statusCode != 200 && statusCode != 202)
 				return new UserPayload(statusCode, "Erro nao categorizado.");
 			
-			return objectMapper.readValue(response.getEntity().getContent(), UserPayload.class);
+			UserPayload tratedResponse = objectMapper.readValue(response.getEntity().getContent(), UserPayload.class);
+			tratedResponse.setMessage("Login bem sucedido.");
+			return tratedResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

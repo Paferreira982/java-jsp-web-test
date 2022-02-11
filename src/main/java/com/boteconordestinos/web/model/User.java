@@ -2,6 +2,8 @@ package com.boteconordestinos.web.model;
 
 import java.util.List;
 
+import com.boteconordestinos.web.payload.UserPayload;
+
 public class User {
 	private Long id;
 	
@@ -11,7 +13,16 @@ public class User {
 	private Boolean active;
 	
 	private List<String> roles;
-
+	
+	public User() {
+	}
+	public User(UserPayload userPayload) {
+		this.id = userPayload.getId();
+		this.username = userPayload.getUsername();
+		this.password = userPayload.getPassword();
+		this.active = userPayload.getActive();
+		this.roles = userPayload.getRoles();
+	}
 	public Long getId() {
 		return id;
 	}

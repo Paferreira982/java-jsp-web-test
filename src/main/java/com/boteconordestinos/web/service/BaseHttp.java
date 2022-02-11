@@ -26,7 +26,6 @@ public class BaseHttp {
 			HttpResponse response = httpclient.execute(httpPost);
 			
 			return response;
-			
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
