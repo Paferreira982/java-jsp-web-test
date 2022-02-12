@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<%@ include file="/WEB-INF/classes/static/full_head.jsp"%>
+	<%@ include file="/WEB-INF/classes/static/head.jsp"%>
 	
 	<!-- PAGE HEAD -->
     <title>Boteco Nordestino's | Login</title>
