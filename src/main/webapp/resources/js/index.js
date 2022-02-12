@@ -1,4 +1,9 @@
 $("#login-form").on("submit", function(event) {
+    $(".btn-login-entry").html(`
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>`);
+    
     $.ajax({
         url: "LoginServlet",
         method: "POST",
@@ -11,6 +16,7 @@ $("#login-form").on("submit", function(event) {
             if (result.status == 200)
                 window.location.href="home.jsp";
             else {
+                $(".btn-login-entry").html("Logar");
                 showLoginMessage(result.message);
             }
         },
