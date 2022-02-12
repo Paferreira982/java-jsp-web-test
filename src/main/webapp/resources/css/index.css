@@ -2,10 +2,6 @@ body {
     background-color: rgb(238, 238, 238);
 }
 
-.btn-login-entry {
-    width: 100%;
-}
-
 .container {
     width: 500px;
     margin: 0 auto;

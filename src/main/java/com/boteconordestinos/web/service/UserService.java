@@ -1,17 +1,16 @@
 package com.boteconordestinos.web.service;
 
 import org.apache.http.HttpResponse;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.boteconordestinos.web.model.User;
 
+@Component
 public class UserService extends BaseHttp {
-	@Value("${btn.api.url}")
-	private String API_URL;
 
 	public User singIn(String json) {
-		System.out.println(API_URL);
-		HttpResponse response = doPost("http://localhost:5559/auth/signin", json);
+		System.out.println();
+		HttpResponse response = doPost(API_URL + "/auth/signin", json);
 		return organizeUser(response);
 	}
 	
@@ -26,7 +25,11 @@ public class UserService extends BaseHttp {
 			if (statusCode != 200 && statusCode != 202)
 				return new User(statusCode, buildErrorMsg(statusCode, "login"));
 			
-			return objectMapper.readValue(response.getEntity().getContent(), User.class);
+			User user = objectMapper.readValue(response.getEntity().getContent(), User.class);
+			user.setStatus(statusCode);
+			user.setMessage("Login bem sucedido.");
+			
+			return user;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -37,7 +40,7 @@ public class UserService extends BaseHttp {
 		switch (fromRequest) {
 		case "login":
 			if (status == 401)
-				return "Usuário ou senha incorreto."; 
+				return "Usuário ou senha incorretos."; 
 			
 			break;
 		}
