@@ -4,8 +4,6 @@
 
 <!-- NAVBAR -->
 
-<header>
-	<nav>TESTEZADA VIOLENTO</nav>
-</header>
+<nav></nav>
 
 <!-- NAVBAR -->

@@ -12,7 +12,6 @@
 	
 </head>
 <body>
-	<%@ include file="/WEB-INF/classes/templates/nav-bar.jsp"%>
 	
     <div class="vertical-center">
         <div class="container p-5">
