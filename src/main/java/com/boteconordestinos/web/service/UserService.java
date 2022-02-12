@@ -9,7 +9,6 @@ import com.boteconordestinos.web.model.User;
 public class UserService extends BaseHttp {
 
 	public User singIn(String json) {
-		System.out.println();
 		HttpResponse response = doPost(API_URL + "/auth/signin", json);
 		return organizeUser(response);
 	}

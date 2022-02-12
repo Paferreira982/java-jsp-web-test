@@ -3,18 +3,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%@ include file="/WEB-INF/classes/static/full_head.jsp"%>
+	
+	<!-- PAGE HEAD -->
     <title>Boteco Nordestino's | Login</title>
-
-    <!-- IMPORTED CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./resources/css/index.css">
+	<link rel="stylesheet" href="./resources/css/index.css">
+	<!-- PAGE HEAD -->
+	
 </head>
 <body>
-		
+	<%@ include file="/WEB-INF/classes/templates/nav-bar.jsp"%>
+	
     <div class="vertical-center">
         <div class="container p-5">
             <div class="alert alert-warning fade show" role="alert" style="display: none;">
