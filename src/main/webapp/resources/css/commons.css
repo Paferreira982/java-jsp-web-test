@@ -1,0 +1,11 @@
+.nav-right-link {
+    text-decoration: none;
+    color: rgba(255,255,255,.55);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-right-link:hover {
+    color: rgba(255,255,255,.75);
+}

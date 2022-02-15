@@ -16,6 +16,8 @@ public class User extends Payload {
 	
 	private List<String> roles;
 	
+	
+	// CONSTRUTORES //
 	public User() {
 	}
 	public User(Integer status, String message) {
@@ -32,6 +34,13 @@ public class User extends Payload {
 		this.active = active;
 		this.roles = roles;
 	}
+	
+	// METODOS //
+	public Boolean isAdmin() {
+		return roles.contains("ROLE_ADMIN");
+	}
+	
+	// GET E SET //
 	public Long getId() {
 		return id;
 	}
