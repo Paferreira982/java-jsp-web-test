@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+	<%
+	request.getSession().invalidate();
+	%>
 	<%@ include file="/WEB-INF/classes/static/head.jsp"%>
 	
 	<!-- PAGE HEAD -->
