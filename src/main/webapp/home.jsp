@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
 	<%@ include file="/WEB-INF/classes/static/head.jsp"%>
 	<title>Home</title>
 </head>
+
 <body>
 	<header>
 		<%@ include file="/WEB-INF/classes/templates/nav-bar.jsp"%>

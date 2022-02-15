@@ -37,7 +37,7 @@ public class User extends Payload {
 	
 	// METODOS //
 	public Boolean isAdmin() {
-		return roles.contains("ROLE_ADMIN");
+		return this.roles != null? roles.contains("ROLE_ADMIN") : false;
 	}
 	
 	// GET E SET //

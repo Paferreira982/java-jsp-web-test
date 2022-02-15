@@ -6,6 +6,7 @@
 User user = (User) request.getSession().getAttribute("loggedUser");
 
 if (user == null) {
+	user = new User();
 	request.getSession().invalidate();
 	response.sendRedirect("index.jsp");
 }
