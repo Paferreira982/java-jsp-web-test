@@ -9,7 +9,7 @@ import com.boteconordestinos.web.model.User;
 public class UserService extends BaseHttp {
 
 	public User singIn(String json) {
-		HttpResponse response = doPost(API_URL + "/auth/signin", json);
+		HttpResponse response = doPost(API_URL + "/auth/login", json);
 		return organizeUser(response);
 	}
 	

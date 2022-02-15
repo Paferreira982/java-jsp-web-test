@@ -1,8 +1,7 @@
 $("#login-form").on("submit", function(event) {
     $(".btn-login-entry").html(`
-    <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>`);
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Carregando...`);
     
     $.ajax({
         url: "LoginServlet",
